@@ -172,4 +172,28 @@ class Account :
          print("\t9. Select Your Option (1-8) ")
          ch = input()
          #system("cls");
-         if 
+         if ch == '1':
+             writeAccount()
+         elif ch == '2':
+             num = int(input("\tEnter The account No. :"))
+             depositAndWithdraw(num, 1)
+         elif ch == '3':
+             num = int(input("\tEnter The account No. :"))
+             depositAndWithdraw(num, 2)
+         elif ch == '4':
+             num = int(input("\tEnter the account No. :"))
+             displaySp(num)
+         elif ch == '5':
+             displayAll();
+         elif ch == '6':
+             num = int(input("\tEnter the account No. :"))
+             deleteAccount(num)
+         elif ch == '7':
+             num = int(input("\t Enter the account No. :"))
+             modifyAccount(num)
+         elif ch == '8':
+             print("\t Thanks for using Yashens Bank Management Systems ")
+             break
+         else :
+             print("Invalid choice")
+       ch = input("Enter your choice : ")
