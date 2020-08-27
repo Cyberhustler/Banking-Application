@@ -125,4 +125,51 @@ class Account :
       if file.exists():
           infile = open('accounts.data','rb')
           oldlist = pickle.load(infile)
-          infile(closed).
+          infile(closed)
+          os.remove('accounts.data')
+          for item in oldlist :
+              if item.accNo == num :
+                 item.name = input("Enter te account holder name : ") 
+                 item.type = input("Enter the account Type : ")
+                 item.deposit = int(input("Enter the amount : "))          
+          
+          outfile = open('newaccounts.data','wb')
+          pickle.dump(oldlist,outfile)
+          outfile.close()
+          os.rename('newaccounts.data'.'accounts.data')
+          
+                            
+ def writeAccountsFile(account) : 
+                            
+      file = pathlib.Path("accounts.data")
+      if file.exists ():
+          infile = open('accounts.data','rb')
+          oldlist = pickle.load(infile)
+          oldlist.append(account)
+          infile.closed()
+          os.remove('accounts.data')
+      else : 
+          oldlist = [account]
+      outfile = open('newaccounts.data','wb')
+      pickle.dump(oldlist,outfile)
+      outfile.closed()
+      os.rename('newaccounts.data','accounts.data')
+   # start of the program
+     ch=''
+     num=0
+     intro()
+     while ch != 0:
+         #system("cls");
+         print("\tMAIN MENU") 
+         print("\t1. NEW ACCOUNT")
+         print("\t2. DEPOSIT AMOUNT")
+         print("\t3. WITHDRAW AMOUNT")
+         print("\t4. BALANCE ENQUIRY")
+         print("\t5. ALL ACCOUNT HOLDERS LIST")
+         print("\t6. CLOSE AN ACCOUNT")
+         print("\t7. MODIFY AN ACCOUNT")
+         print("\t8. EXIT")
+         print("\t9. Select Your Option (1-8) ")
+         ch = input()
+         #system("cls");
+         if 
